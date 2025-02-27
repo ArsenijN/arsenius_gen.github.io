@@ -1,0 +1,51 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<!--script>document.getElementsByTagName('html')[0].classList.add('js-enabled');</script-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+
+    <noscript>
+
+    <div class="awesome-fancy-styling">
+        This page requires JavaScript to click this ✨beautiful styled✨ buttons. I will only be visible if you have it disabled.
+        <a href="index_noscript.html" class="button-link">Go to non-js page</a>
+    </div>
+
+    </noscript>
+    <!-- Taken from: https://stackoverflow.com/questions/9391195/show-message-if-javascript-is-not-enabled-in-the-browser -->
+    <h1>Welcome to the arsenius.gen home page!</h1>
+    <!--a href="page2.html">Go to Page 2</a-->
+
+    <button onclick="goToPage('page2')" class="button-link">NO</button>
+    <button onclick="goToPage('page3')" class="button-link">[UNDER CONSTRUCTION] Repairing e-shop</button>
+    <button onclick="goToPage('image_gen')" class="button-link">Генератор малюнків</button>
+    <button onclick="goToPage('/snes9x/snes9x')" class="button-link">snies (chreome only?)</button>
+    <button onclick="goToPage('gallery')" class="button-link">Owner's gallery</button>
+    <button onclick="goToPage('gallery2')" class="button-link">Owner's gallery v2</button>
+    <button onclick="goToPage('gallery2avif')" class="button-link">Owner's gallery v2 (reduced)</button>
+    <button onclick="goToPageEtc('rr.mp4')" class="button-link">!!!</button>
+    <button onclick="goToPageEtc('!!!.html')" class="button-link">!!!</button>
+    <button onclick="goToPageEtc('nonexist.html')" class="button-link">Music library (dev)</button>
+
+
+
+    <!--input id="clickMe" type="button" value="clickme" onclick="goToPage();" /-->
+
+    <script>
+        function goToPage(page) {
+            window.location.href = page + '.html';
+        }
+        function goToPagejs(page) {
+            window.location.href = page + '.js';
+        }
+        function goToPageEtc(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
