@@ -79,6 +79,7 @@ body{
   border-radius: 16px;
   float: left;
   transition: all 0.5s ease;
+  /*
   max-width: 38%
   /*margin: auto;
   display: inline-block;*/
@@ -266,6 +267,8 @@ body{
 .cb{
   margin-top: 24px;
   margin-left: calc(50% - 24px);
+  /* 24 doesn't work properly*/
+  /* any value doesn't work properly */
   text-decoration: none;
 }
 
@@ -277,6 +280,6 @@ body{
   border-radius: 16px;
   background: rgba(255,255,255,0.4);
   color: #000000;
-  font-family: Photoshoot;
+  font-family: Photoshoot, "Tektur";
   cursor: pointer;
 }
