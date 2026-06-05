@@ -12,13 +12,15 @@
         const now = new Date();
         let diff = now - birthDate;
 
-        const seconds = Math.floor((diff / 1000) % 60);
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const days = Math.floor((diff / (1000 * 60 * 60 * 24)) % 7);
-        const weeks = Math.floor((diff / (1000 * 60 * 60 * 24 * 7)) % 4.345);
-        const months = Math.floor((diff / (1000 * 60 * 60 * 24 * 30.44)) % 12);
-        const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+        let remaining = diff;
+
+        const years   = Math.floor(remaining / (365.25 * 86400000)); remaining -= years   * 365.25 * 86400000;
+        const months  = Math.floor(remaining / (30.44  * 86400000)); remaining -= months  * 30.44  * 86400000;
+        const weeks   = Math.floor(remaining / (7      * 86400000)); remaining -= weeks   * 7      * 86400000;
+        const days    = Math.floor(remaining /           86400000);  remaining -= days    *           86400000;
+        const hours   = Math.floor(remaining /            3600000);  remaining -= hours   *            3600000;
+        const minutes = Math.floor(remaining /              60000);  remaining -= minutes *              60000;
+        const seconds = Math.floor(remaining /               1000);
         
       document.getElementById("ageTimer").textContent = `${years} years, ${months} months, ${weeks} weeks, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
       }
